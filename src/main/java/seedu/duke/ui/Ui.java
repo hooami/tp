@@ -181,6 +181,14 @@ public class Ui {
         print(wrapper.toString());
         printTableRows(list, headers, columnWidths);
         print(wrapper.toString());
+    }
 
+    public void printDelete(boolean txType, int id, String description) {
+        id++; // To add 1 to display correct ID to user
+        if (txType) {
+            print("Successfully deleted income transaction ID " + id + ": " + description);
+        } else {
+            print("Successfully deleted expense transaction ID " + id + ": " + description);
+        }
     }
 }

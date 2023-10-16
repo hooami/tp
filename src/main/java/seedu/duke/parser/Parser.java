@@ -1,10 +1,12 @@
 package seedu.duke.parser;
 
+import seedu.duke.command.Command;
 import seedu.duke.command.AddExpenseCommand;
 import seedu.duke.command.AddIncomeCommand;
-import seedu.duke.command.Command;
-import seedu.duke.command.ExitCommand;
 import seedu.duke.command.ListCommand;
+import seedu.duke.command.DeleteCommand;
+import seedu.duke.command.ExitCommand;
+
 import seedu.duke.exception.DukeException;
 
 import java.util.ArrayList;
@@ -40,6 +42,8 @@ public class Parser {
             return new AddExpenseCommand(description, argsMap);
         case "list":
             return new ListCommand(description, argsMap);
+        case "delete":
+            return new DeleteCommand(description, argsMap);
         default:
             throw new DukeException("Sorry I do not understand your command");
         }
@@ -104,5 +108,22 @@ public class Parser {
         }
 
         return parsedValue;
+    }
+
+    public static int parseInt(String number){
+        try {
+            return Integer.parseInt(number) - 1;
+        } catch (NumberFormatException nfe) {
+            return -1;
+        }
+    }
+    //Returns true if transaction type is in, else return false if transaction type is out.
+    public static boolean checkType(String arg) throws DukeException {
+        String invalidType = "I'm sorry, you need to specify a type in the format " +
+                "'/type in' or '/type out'";
+        if (!arg.equals("in") && !arg.equals("out")) {
+            throw new DukeException(invalidType);
+        }
+        return arg.equals("in");
     }
 }

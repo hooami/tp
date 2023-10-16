@@ -56,7 +56,6 @@ public class ListCommand extends Command {
     }
 
     private void listTypeHandler() throws DukeException {
-        ArrayList<ArrayList<String>> returnArray;
         String type = getArg("type");
         assert type != null;
         if (type.equals("in")) {
