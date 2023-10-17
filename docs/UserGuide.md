@@ -113,12 +113,12 @@ Safely ends the program.
 
 ## Command Summary
 
-| Action                  | Format                                                                       | Example                                   |
-|-------------------------|------------------------------------------------------------------------------|-------------------------------------------|
-| Help                    | `help`                                                                       |                                           |
-| Adding an income entry  | `in DESCRIPTION /amount AMOUNT /goal GOAL [/date DATE in DDMMYYYY]`          | `in part-time job /amount 500 /goal car`  |
+| Action                  | Format                                                                      | Example                                  |
+|-------------------------|-----------------------------------------------------------------------------|------------------------------------------|
+| Help                    | `help`                                                                      |                                          |
+| Adding an income entry  | `in DESCRIPTION /amount AMOUNT /goal GOAL [/date DATE in DDMMYYYY]`         | `in part-time job /amount 500 /goal car` |
 | Adding an expense entry | `out DESCRIPTION /amount AMOUNT /category CATEGORY [/date DATE in DDMMYYYY]` | `out dinner /amount 10.50 /category food` |
-| Delete Transaction      | <code>delete INDEX /type (in &#124; out)</code>                              | `delete 1 /type in`                       |
-| List Transactions       | <code>list /type (in &#124; out) [/goal GOAL] [/category CATEGORY]</code>    | `list /type in`                           |
-| End program             | `bye`                                                                        |                                           |
+| Delete Transaction      | `delete INDEX /type (in | out)`                                    | `delete 1 /type in`                       |
+| List Transactions       | `list /type (in | out) [/goal GOAL] [/category CATEGORY]`  | `list /type in`                         |
+| End program             | `bye`                                                                       |                                          |
 
